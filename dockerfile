@@ -1,5 +1,5 @@
-FROM alpine 
-RUN apk update && apk add nano
-COPY ./SP1.sh SP1.sh
-RUN chmod ugo+x SP1.sh
-ENTRYPOINT /bin/sh
+FROM alpine
+RUN apk update && apk add nano && apk add build-base
+COPY ./hello.s hello.s
+RUN chmod ugo+x hello.s
+ENTRYPOINT bin/sh
